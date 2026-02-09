@@ -1,0 +1,140 @@
+:root {
+  --bg: #0f1a14;
+  --panel: #14241b;
+  --accent: #f2c94c;
+  --hit: #27ae60;
+  --miss: #eb5757;
+  --text: #e6f3ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1f3b2b, #0b1410 60%);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app {
+  width: min(520px, 95vw);
+  background: linear-gradient(180deg, #1a2f24, #0f1a14);
+  border: 2px solid #2b4735;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 4vw, 32px);
+  letter-spacing: 0.04em;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.pill {
+  background: #223a2d;
+  border: 1px solid #2d4a38;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.hole {
+  background: var(--panel);
+  border: 2px solid #274033;
+  border-radius: 16px;
+  height: 110px;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease;
+  user-select: none;
+}
+
+.hole:hover {
+  transform: translateY(-2px);
+  border-color: #3b5a45;
+}
+
+.hole.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(242, 201, 76, 0.3);
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: #1a1a1a;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+button:disabled {
+  background: #546055;
+  color: #2b2f2c;
+  cursor: not-allowed;
+}
+
+.message {
+  flex: 1;
+  min-width: 180px;
+  background: #1a2c22;
+  border: 1px solid #274033;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.flash {
+  animation: flash 240ms ease;
+}
+
+@keyframes flash {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .hole {
+    height: 90px;
+    font-size: 34px;
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emoji Whack-a-Mole</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Emoji Whack-a-Mole</h1>
+      <div class="status">
+        <div class="pill">Time: <span id="time">30</span>s</div>
+        <div class="pill">Score: <span id="score">0</span></div>
+        <div class="pill">Speed: <span id="speed">1.0</span>x</div>
+      </div>
+      <section class="grid" id="grid" aria-label="Whack grid"></section>
+      <div class="controls">
+        <button id="start">Start</button>
+        <div class="message" id="message">
+          Click the emoji mole 🐹 to score. It speeds up over time.
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
